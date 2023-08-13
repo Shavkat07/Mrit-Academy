@@ -1,0 +1,31 @@
+BASE HTML:
+    main navbar:
+        -left: logo, tutorials, exercises, about us
+        -right: account(login/signup if not logged in), dark/light mode, search
+    
+    second navbar:
+        -tutorials(html, css, js, python, sql, ect.)
+
+    footer:
+        -social media links
+        -newsletter
+        -send message
+        -text about us
+        -logo
+
+
+CONTENT UPLOADING:
+    write lessons in web Jupyter notebook.
+    upload and deploy notebook in github pages.
+    embed notebook with iframe
+    https://blog.jupyter.org/jupyter-everywhere-f8151c2cc6e8
+
+
+BACKEND:
+    apps:
+        home
+        learn
+        users
+
+    -home view: all courses
+    -'main_url/learn/{course_name}' - course content

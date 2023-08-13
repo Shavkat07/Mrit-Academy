@@ -1,0 +1,40 @@
+{% load custom_tags %}
+<! DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #answersInput {
+        max-width: {{ len }}ch;
+        min-width: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+{{ exercise.question|safe }}
+<form method="post" id="exerciseForm" action="{% url 'exercises:exercises' exercise_id %}">
+    {% csrf_token %}
+    {{ code|replace_diams|safe }}
+    <input type="submit" value="Javobni yuborish" width="10%">
+
+</form>
+{% if success_message %}
+<p>{{ success_message }}</p>
+{% endif %}
+{% if error_message %}
+<div class="alert alert-danger">
+    {{ error_message }}
+</div>
+{% endif %}
+</body>
+
+<!--            <a href="{% url 'exercises:exercises' exercise_id %}"> Javobni yuborish </a>-->
+<!--<script>-->
+<!--    function resizeInput(input) {-->
+<!--        input.style.width = input.value.length + "ch";-->
+<!--    }-->
+<!--</script>-->
+</html>
